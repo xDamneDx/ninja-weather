@@ -19,8 +19,3 @@ const getWeather = async (id) => {
 
   return data[0];
 };
-
-getCity("mykolaiv")
-  .then((data) => getWeather(data.Key))
-  .then((data) => console.log(data))
-  .catch((err) => console.log(err));
