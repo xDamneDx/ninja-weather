@@ -1,3 +1,5 @@
+// API_KEY is located in https://developer.accuweather.com/user/me/apps
+
 // get city information:
 const getCity = async (city) => {
   const base = "http://dataservice.accuweather.com/locations/v1/cities/search";
