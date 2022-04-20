@@ -36,9 +36,16 @@ cityForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const city = cityForm.city.value.trim();
+  localStorage.setItem("NinjaWeather_City", city);
   cityForm.reset();
 
   updateCity(city)
     .then((data) => updateUI(data))
     .catch((err) => console.log(err));
 });
+
+if (localStorage.getItem("NinjaWeather_City")) {
+  updateCity(localStorage.getItem("NinjaWeather_City"))
+    .then((data) => updateUI(data))
+    .catch((err) => console.log(err));
+}
